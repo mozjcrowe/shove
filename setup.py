@@ -2,7 +2,8 @@
 import codecs
 import os
 import re
-from setuptools import setup, find_packages
+from setuptools import find_packages
+from distutils.core import setup
 
 
 def read(*parts):
@@ -18,7 +19,7 @@ def find_version(*file_paths):
         return version_match.group(1)
     raise RuntimeError("Unable to find version string.")
 
-requirements = ['pika==0.9.14']
+requirements = ['pika==0.9.13']
 
 setup(
     name='shove',
@@ -31,7 +32,6 @@ setup(
     url='https://github.com/mozilla/shove',
     license='MPL v2.0',
     install_requires=requirements,
-    include_package_data=True,
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
@@ -40,6 +40,10 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
+    ],
+    data_files=[
+        ('/etc/supervisor.d', ['etc/supervisor-shove.conf']),
+        ('/etc/shove/', ['etc/settings.py'])
     ],
     entry_points={
         'console_scripts': [
