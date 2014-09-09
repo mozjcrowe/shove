@@ -41,9 +41,6 @@ setup(
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
     ],
-    data_files=[
-        ('/etc/shove/', ['etc/settings.py'])
-    ],
     entry_points={
         'console_scripts': [
             'shove=shove.cmd:main'
