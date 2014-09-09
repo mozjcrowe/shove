@@ -42,7 +42,6 @@ setup(
         'Programming Language :: Python :: 2.7',
     ],
     data_files=[
-        ('/etc/supervisor.d', ['etc/supervisor-shove.conf']),
         ('/etc/shove/', ['etc/settings.py'])
     ],
     entry_points={
