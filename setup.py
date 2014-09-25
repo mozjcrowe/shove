@@ -22,7 +22,7 @@ def find_version(*file_paths):
 requirements = ['pika==0.9.13']
 
 setup(
-    name='shove',
+    name='python-captain-shove',
     description='Server-side daemon that listens to commands from Captain.',
     long_description=read('README.rst'),
     version=find_version('shove/__init__.py'),
